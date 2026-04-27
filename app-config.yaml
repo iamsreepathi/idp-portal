@@ -109,7 +109,7 @@ catalog:
     entityFilename: catalog-info.yaml
     pullRequestBranchName: backstage-integration
   rules:
-    - allow: [Component, System, API, Resource, Location]
+    - allow: [Component, System, API, Resource, Location, Group, User]
   locations:
     # Local example data, file locations are relative to the backend process, typically `packages/backend`
     - type: file
@@ -120,6 +120,16 @@ catalog:
       target: ../../examples/template/template.yaml
       rules:
         - allow: [Template]
+    
+    - type: url
+      target: https://github.com/iamsreepathi/backstage-templates/blob/main/templates/services/laravel-tall/template.yaml
+      rules:
+        - allow: [Template]
+
+    - type: url
+      target: https://github.com/iamsreepathi/backstage-templates/blob/main/catalog/teams.yaml
+      rules:
+        - allow: [Group, User]
 
     # Local example organizational data
     - type: file
