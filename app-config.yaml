@@ -82,6 +82,14 @@ techdocs:
     runIn: 'docker' # Alternatives - 'local'
   publisher:
     type: 'local' # Alternatives - 'googleGcs' or 'awsS3'. Read documentation for using alternatives.
+  addons:
+    mermaid:
+      enableZoom: true
+      zoomOptions:
+        scaleExtent: [0.1, 10]           # Optional: min/max zoom scale
+        translateExtent:                   # Optional: pan boundaries
+          - [-1000, -1000]
+          - [1000, 1000]
 
 auth:
   # see https://backstage.io/docs/auth/ to learn about auth providers
